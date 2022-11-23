@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import OctoKit
 
-class PullRequestsViewModel: ObservableObject {
+@MainActor class PullRequestsViewModel: ObservableObject {
     
     @Published var sections = ["Authored PRs", "Assigned PRs", "Draft PRs"]
     @Published var model = [
