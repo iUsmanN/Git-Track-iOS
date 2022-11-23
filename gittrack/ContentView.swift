@@ -24,7 +24,8 @@ struct ContentView: View {
 //            PullRequestsView(viewModel: PullRequestsViewModel())
 //                .navigationTitle("Pull Requests")
 //        }
-        LoginView()
+//        LoginView()
+        PullRequestsView(viewModel: PullRequestsViewModel())
     }
 }
 

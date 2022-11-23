@@ -19,20 +19,35 @@ struct PRCell: View {
                         .font(.caption)
                     Text(pullRequest.name)
                         .font(.title3)
-//                    Text("labels")
+                    statusString(status: pullRequest.status)
+                        .font(.caption)
                 }
                 Spacer()
-                Image(systemName: "sun.dust")
+                PRIcon(state: pullRequest.status)
+                    .padding([.trailing], -15)
             }
         }
         .frame(height: 50)
+    }
+    
+    @ViewBuilder func statusString(status: PRStatus) -> some View {
+        switch status {
+        case .blocked:
+            Text("BLOCKED")
+        case .draft:
+            Text("DRAFT")
+        case .review:
+            Text("IN REVIEW")
+        case .attention:
+            Text("APPROVED")
+        }
     }
 }
 
 struct PRCell_Previews: PreviewProvider {
     static var previews: some View {
         PRCell(pullRequest: PullRequest(name: "Example PR",
-                                       creator: "Example Creator",
+                                        creator: "Example Creator",
                                         status: .review))
     }
 }
