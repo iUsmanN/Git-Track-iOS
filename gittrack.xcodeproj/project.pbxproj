@@ -23,6 +23,8 @@
 		B6E142BE292EE1A20054850C /* gittrack_widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B6E142B9292EE1A00054850C /* gittrack_widget.intentdefinition */; };
 		B6E142C1292EE1A20054850C /* gittrack-widgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B6E142AC292EE1A00054850C /* gittrack-widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B6E142C6292EE1EA0054850C /* PullRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD6F41292849660073A4BF /* PullRequest.swift */; };
+		B6E142C7292EE35E0054850C /* PRCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6006E11292E36C200F8B21F /* PRCell.swift */; };
+		B6E142C8292EE3690054850C /* PRIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61F30B5292E91B20068BAC7 /* PRIcon.swift */; };
 		B6FD6F25292844030073A4BF /* gittrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD6F24292844030073A4BF /* gittrackApp.swift */; };
 		B6FD6F27292844030073A4BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD6F26292844030073A4BF /* ContentView.swift */; };
 		B6FD6F29292844040073A4BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6FD6F28292844040073A4BF /* Assets.xcassets */; };
@@ -374,11 +376,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6E142C8292EE3690054850C /* PRIcon.swift in Sources */,
 				B6E142B8292EE1A00054850C /* gittrack_widget.swift in Sources */,
 				B6E142B4292EE1A00054850C /* gittrack_widgetBundle.swift in Sources */,
 				B6E142BD292EE1A20054850C /* gittrack_widget.intentdefinition in Sources */,
 				B6E142C6292EE1EA0054850C /* PullRequest.swift in Sources */,
 				B6E142B6292EE1A00054850C /* gittrack_widgetLiveActivity.swift in Sources */,
+				B6E142C7292EE35E0054850C /* PRCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

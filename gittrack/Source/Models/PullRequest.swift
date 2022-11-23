@@ -14,7 +14,7 @@ enum PRStatus {
     case attention
 }
 
-struct PullRequest: Identifiable {
+struct PullRequest: Identifiable, Hashable {
     let id = UUID()
     var name: String
     var creator: String
