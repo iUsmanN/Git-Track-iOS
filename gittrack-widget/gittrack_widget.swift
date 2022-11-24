@@ -22,18 +22,29 @@ struct Provider: IntentTimelineProvider {
     }
     
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [PREntry] = []
+//        var entries: [PREntry] = []
         
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = PREntry(date: entryDate, prObject: [PullRequest(name: "Name", creator: "Creator", status: .review)], configuration: ConfigurationIntent())
-            entries.append(entry)
+//        let currentDate = Date()
+//        for hourOffset in 0 ..< 5 {
+//            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
+//            let entry = PREntry(date: entryDate, prObject: [PullRequest(name: "Name", creator: "Creator", status: .review)], configuration: ConfigurationIntent())
+//            entries.append(entry)
+//        }
+        
+        Octokit(TokenConfiguration("")).pullRequests(owner: "iUsmanN", repository: "CrowdCast_iOS") { response in
+            switch response {
+            case .success(let t):
+                let prs = t.map({PullRequest(name: $0.title ?? "a", creator: $0.user?.login ?? "b", status: .attention)})
+                let timeline = Timeline(entries: [PREntry(date: Date(), prObject: prs, configuration: ConfigurationIntent())], policy: .atEnd)
+                completion(timeline)
+            case .failure(let error):
+                print(error)
+            }
         }
         
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
+//        let timeline = Timeline(entries: entries, policy: .atEnd)
+//        completion(timeline)
     }
 }
 
@@ -56,7 +67,7 @@ struct gittrack_widgetEntryView : View {
             ForEach(entry.prObject, id: \.self) { pr in
                 PRCell(pullRequest: pr).padding()
             }
-            Spacer()
+//            Spacer()
         }
     }
 }

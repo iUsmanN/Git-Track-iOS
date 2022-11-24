@@ -13,6 +13,7 @@
 		B6006E10292E330C00F8B21F /* PullRequestsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6006E0F292E330C00F8B21F /* PullRequestsViewModel.swift */; };
 		B6006E12292E36C200F8B21F /* PRCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6006E11292E36C200F8B21F /* PRCell.swift */; };
 		B61F30B6292E91B20068BAC7 /* PRIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61F30B5292E91B20068BAC7 /* PRIcon.swift */; };
+		B6DD7BC3292EF2E900ECEACE /* OctoKit in Frameworks */ = {isa = PBXBuildFile; productRef = B6DD7BC2292EF2E900ECEACE /* OctoKit */; };
 		B6E142AF292EE1A00054850C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6E142AE292EE1A00054850C /* WidgetKit.framework */; };
 		B6E142B1292EE1A00054850C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6E142B0292EE1A00054850C /* SwiftUI.framework */; };
 		B6E142B4292EE1A00054850C /* gittrack_widgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E142B3292EE1A00054850C /* gittrack_widgetBundle.swift */; };
@@ -94,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6DD7BC3292EF2E900ECEACE /* OctoKit in Frameworks */,
 				B6E142B1292EE1A00054850C /* SwiftUI.framework in Frameworks */,
 				B6E142AF292EE1A00054850C /* WidgetKit.framework in Frameworks */,
 			);
@@ -285,6 +287,9 @@
 			dependencies = (
 			);
 			name = "gittrack-widgetExtension";
+			packageProductDependencies = (
+				B6DD7BC2292EF2E900ECEACE /* OctoKit */,
+			);
 			productName = "gittrack-widgetExtension";
 			productReference = B6E142AC292EE1A00054850C /* gittrack-widgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -691,6 +696,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		B6006E00292E2E3600F8B21F /* OctoKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6006DFF292E2E3600F8B21F /* XCRemoteSwiftPackageReference "octokit" */;
+			productName = OctoKit;
+		};
+		B6DD7BC2292EF2E900ECEACE /* OctoKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B6006DFF292E2E3600F8B21F /* XCRemoteSwiftPackageReference "octokit" */;
 			productName = OctoKit;
