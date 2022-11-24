@@ -12,6 +12,7 @@ import SwiftUI
 struct gittrack_widgetBundle: WidgetBundle {
     var body: some Widget {
         gittrack_widget()
+        gittrack_assignedWidget()
         gittrack_widgetLiveActivity()
     }
 }

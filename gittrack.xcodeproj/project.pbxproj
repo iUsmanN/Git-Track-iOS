@@ -14,6 +14,7 @@
 		B6006E12292E36C200F8B21F /* PRCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6006E11292E36C200F8B21F /* PRCell.swift */; };
 		B61F30B6292E91B20068BAC7 /* PRIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61F30B5292E91B20068BAC7 /* PRIcon.swift */; };
 		B6DD7BC3292EF2E900ECEACE /* OctoKit in Frameworks */ = {isa = PBXBuildFile; productRef = B6DD7BC2292EF2E900ECEACE /* OctoKit */; };
+		B6DD7BC5292EFAB000ECEACE /* gittrack_assigned_widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DD7BC4292EFAB000ECEACE /* gittrack_assigned_widget.swift */; };
 		B6E142AF292EE1A00054850C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6E142AE292EE1A00054850C /* WidgetKit.framework */; };
 		B6E142B1292EE1A00054850C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6E142B0292EE1A00054850C /* SwiftUI.framework */; };
 		B6E142B4292EE1A00054850C /* gittrack_widgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E142B3292EE1A00054850C /* gittrack_widgetBundle.swift */; };
@@ -68,6 +69,7 @@
 		B6006E0F292E330C00F8B21F /* PullRequestsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestsViewModel.swift; sourceTree = "<group>"; };
 		B6006E11292E36C200F8B21F /* PRCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRCell.swift; sourceTree = "<group>"; };
 		B61F30B5292E91B20068BAC7 /* PRIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRIcon.swift; sourceTree = "<group>"; };
+		B6DD7BC4292EFAB000ECEACE /* gittrack_assigned_widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gittrack_assigned_widget.swift; sourceTree = "<group>"; };
 		B6E142AC292EE1A00054850C /* gittrack-widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "gittrack-widgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E142AE292EE1A00054850C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		B6E142B0292EE1A00054850C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -180,6 +182,7 @@
 				B6E142B9292EE1A00054850C /* gittrack_widget.intentdefinition */,
 				B6E142BA292EE1A20054850C /* Assets.xcassets */,
 				B6E142BC292EE1A20054850C /* Info.plist */,
+				B6DD7BC4292EFAB000ECEACE /* gittrack_assigned_widget.swift */,
 			);
 			path = "gittrack-widget";
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 			files = (
 				B6E142C8292EE3690054850C /* PRIcon.swift in Sources */,
 				B6E142B8292EE1A00054850C /* gittrack_widget.swift in Sources */,
+				B6DD7BC5292EFAB000ECEACE /* gittrack_assigned_widget.swift in Sources */,
 				B6E142B4292EE1A00054850C /* gittrack_widgetBundle.swift in Sources */,
 				B6E142BD292EE1A20054850C /* gittrack_widget.intentdefinition in Sources */,
 				B6E142C6292EE1EA0054850C /* PullRequest.swift in Sources */,

@@ -12,7 +12,6 @@ import OctoKit
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> PREntry {
-        //        SimpleEntry(date: Date(), configuration: ConfigurationIntent())
         PREntry(date: Date(), prObject: [PullRequest(name: "Name", creator: "Creator", status: .review)], configuration: ConfigurationIntent())
     }
     
@@ -21,30 +20,19 @@ struct Provider: IntentTimelineProvider {
         completion(entry)
     }
     
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-//        var entries: [PREntry] = []
-        
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-//        let currentDate = Date()
-//        for hourOffset in 0 ..< 5 {
-//            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-//            let entry = PREntry(date: entryDate, prObject: [PullRequest(name: "Name", creator: "Creator", status: .review)], configuration: ConfigurationIntent())
-//            entries.append(entry)
-//        }
-        
+    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<PREntry>) -> ()) {
         Octokit(TokenConfiguration("")).pullRequests(owner: "iUsmanN", repository: "CrowdCast_iOS") { response in
             switch response {
             case .success(let t):
-                let prs = t.map({PullRequest(name: $0.title ?? "a", creator: $0.user?.login ?? "b", status: .attention)})
+                let prs = t.filter({$0.user?.login ?? "" == "iUsmanN"}).map { inputPR in
+                    return PullRequest(name: inputPR.title ?? "XX", creator: inputPR.user?.login ?? "XX", status: .review)
+                }
                 let timeline = Timeline(entries: [PREntry(date: Date(), prObject: prs, configuration: ConfigurationIntent())], policy: .atEnd)
                 completion(timeline)
             case .failure(let error):
                 print(error)
             }
         }
-        
-//        let timeline = Timeline(entries: entries, policy: .atEnd)
-//        completion(timeline)
     }
 }
 
@@ -61,16 +49,29 @@ struct PREntry: TimelineEntry {
 
 struct gittrack_widgetEntryView : View {
     var entry: Provider.Entry
+    @Environment(\.widgetFamily) var widgetFamily
     
     var body: some View {
+        
         VStack(spacing: -10) {
-            ForEach(entry.prObject, id: \.self) { pr in
-                PRCell(pullRequest: pr).padding()
+            Text("AUTHORED PRS").padding(.top, 10).padding(.bottom, 6).font(.caption)
+            ForEach(entry.prObject.prefix(widgetFamily == .systemLarge ? 5 : 2), id: \.self) { pr in
+                PRCell(pullRequest: pr).padding().padding(.top, -5)
             }
-//            Spacer()
+            Spacer()
         }
     }
 }
+
+////@main
+//struct gittrackWidgetBuilder: WidgetBundle {
+//    
+//    @WidgetBundleBuilder
+//    var body: some Widget {
+//        gittrack_widget()
+//        gittrack_widget2()
+//    }
+//}
 
 struct gittrack_widget: Widget {
     let kind: String = "gittrack_widget"
@@ -79,21 +80,22 @@ struct gittrack_widget: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             gittrack_widgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Authored PRs")
+        .description("This shows your current Authored Pull Requests.")
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }
 
 struct gittrack_widget_Previews: PreviewProvider {
     static var previews: some View {
         
-        gittrack_widgetEntryView(entry: PREntry(date: Date(), prObject: [PullRequest(name: "Name", creator: "Creator", status: .review)], configuration: ConfigurationIntent()))
+        gittrack_widgetEntryView(entry: PREntry(date: Date(), prObject: [PullRequest(name: "Name", creator: "Creator", status: .review), PullRequest(name: "Name", creator: "Creator", status: .attention)], configuration: ConfigurationIntent()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
         
-        gittrack_widgetEntryView(entry: PREntry(date: Date(), prObject: [PullRequest(name: "Name", creator: "Creator", status: .review)], configuration: ConfigurationIntent()))
+        gittrack_widgetEntryView(entry: PREntry(date: Date(), prObject: [PullRequest(name: "Name", creator: "Creator", status: .review), PullRequest(name: "Name", creator: "Creator", status: .attention)], configuration: ConfigurationIntent()))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
         
-        gittrack_widgetEntryView(entry: PREntry(date: Date(), prObject: [PullRequest(name: "Name", creator: "Creator", status: .review)], configuration: ConfigurationIntent()))
+        gittrack_widgetEntryView(entry: PREntry(date: Date(), prObject: [PullRequest(name: "Name", creator: "Creator", status: .review), PullRequest(name: "Name", creator: "Creator", status: .attention), PullRequest(name: "Name", creator: "Creator", status: .review), PullRequest(name: "Name", creator: "Creator", status: .attention), PullRequest(name: "Name", creator: "Creator", status: .review), PullRequest(name: "Name", creator: "Creator", status: .attention)], configuration: ConfigurationIntent()))
             .previewContext(WidgetPreviewContext(family: .systemLarge))
     }
 }
