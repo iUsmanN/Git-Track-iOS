@@ -9,46 +9,45 @@ import ActivityKit
 import WidgetKit
 import SwiftUI
 
-struct gittrack_widgetAttributes: ActivityAttributes {
-    public struct ContentState: Codable, Hashable {
-        // Dynamic stateful properties about your activity go here!
-        var value: Int
-    }
-
-    // Fixed non-changing properties about your activity go here!
-    var name: String
-}
-
 struct gittrack_widgetLiveActivity: Widget {
     var body: some WidgetConfiguration {
-        ActivityConfiguration(for: gittrack_widgetAttributes.self) { context in
+        ActivityConfiguration(for: PRTrackingAttributes.self) { context in
             // Lock screen/banner UI goes here
             VStack {
-                Text("Hello")
+                PRLiveActivityDetailView(model: PullRequest(name: context.attributes.name,
+                                                            creator: context.attributes.author,
+                                                            status: context.state.status)
+                )
             }
-            .activityBackgroundTint(Color.cyan)
-            .activitySystemActionForegroundColor(Color.black)
+            .activityBackgroundTint(Color.secondary)
+            .activitySystemActionForegroundColor(Color.white)
             
         } dynamicIsland: { context in
             DynamicIsland {
                 // Expanded UI goes here.  Compose the expanded UI through
                 // various regions, like leading/trailing/center/bottom
                 DynamicIslandExpandedRegion(.leading) {
-                    Text("Leading")
+                    Image(systemName: "g.circle")
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text("Trailing")
+                    
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text("Bottom")
-                    // more content
+                    PRLiveActivityDetailView(model: PullRequest(name: context.attributes.name,
+                                                                creator: context.attributes.author,
+                                                                status: context.state.status)
+                    )
                 }
             } compactLeading: {
-                Text("L")
+                ZStack{}
             } compactTrailing: {
-                Text("T")
+                ZStack {
+                    GlowingCircle(glowing: true, status: context.state.status, maxRadius: 20)
+                    Image(systemName: "g.circle").foregroundColor(.black)
+                }.frame(width: 20, height: 20)
             } minimal: {
                 Text("Min")
+                    .border(.red)
             }
             .widgetURL(URL(string: "http://www.apple.com"))
             .keylineTint(Color.red)

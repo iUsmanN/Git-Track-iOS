@@ -23,6 +23,8 @@ struct LoginView: View {
     private func Login() {
         let config = TokenConfiguration("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")
         loadCurrentUser(config: config)
+        
+        //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
     }
     
     func loadCurrentUser(config: TokenConfiguration) {

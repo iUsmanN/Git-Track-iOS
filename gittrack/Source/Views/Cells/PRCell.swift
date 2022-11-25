@@ -20,11 +20,10 @@ struct PRCell: View {
                     Text(pullRequest.name)
                         .font(.title3)
                     statusString(status: pullRequest.status)
-                        .font(.caption)
+                        .font(.caption2)
                 }
                 Spacer()
-                PRIcon(state: pullRequest.status)
-                    .padding([.trailing], -15)
+                GlowingCircle(glowing: true, status: pullRequest.status, maxRadius: 20)
             }
         }
         .frame(height: 50)

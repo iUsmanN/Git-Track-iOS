@@ -10,7 +10,7 @@ import Foundation
 enum Networking {
     
     enum Host: String {
-        case baseUrl = "api.spacexdata.com"
+        case baseUrl = "api.github.com"
     }
     
     enum Scheme: String {
@@ -20,6 +20,8 @@ enum Networking {
     enum Endpoint: String {
         case companyInfo = "/v4/company"
         case launches = "/v4/launches"
+        
+        case PRs = "/repos/iUsmanN/cyty_ios/pulls"
     }
     
     enum HTTPMethod : String {

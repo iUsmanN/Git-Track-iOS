@@ -16,44 +16,45 @@ struct PRIcon: View {
     }
     
     var body: some View {
-        ZStack {
-            switch state {
-            case .draft:
-                ApprovedIcon()
-                    .stroke()
-                    .foregroundColor(.gray)
-                    .opacity(0.7)
-                Circle()
-                    .frame(width: 26)
-                    .foregroundColor(.gray)
-                    .opacity(0.5)
-            case .review:
-                ReviewIcon()
-                    .stroke()
-                    .foregroundColor(.purple)
-                    .opacity(0.5)
-                Circle()
-                    .frame(width: 22)
-                    .foregroundColor(.purple)
-            case .blocked:
-                ApprovedIcon()
-                    .stroke()
-                    .foregroundColor(.red)
-                    .opacity(0.5)
-                Circle()
-                    .frame(width: 17)
-                    .foregroundColor(.red)
-            case .attention:
-                ApprovedIcon()
-                    .stroke()
-                    .foregroundColor(.green)
-                    .opacity(0.5)
-                Circle()
-                    .frame(width: 26)
-                    .foregroundColor(.green)
+        GeometryReader { geometry in
+            ZStack {
+                switch state {
+                case .draft:
+                    ApprovedIcon()
+                        .stroke()
+                        .foregroundColor(.gray)
+                        .opacity(0.7)
+                    Circle()
+                        .frame(width: geometry.size.width * 0.45)
+                        .foregroundColor(.gray)
+                        .opacity(0.5)
+                case .review:
+                    ApprovedIcon()
+                        .stroke()
+                        .foregroundColor(.purple)
+                        .opacity(0.5)
+                    Circle()
+                        .frame(width: geometry.size.width * 0.45)
+                        .foregroundColor(.purple)
+                case .blocked:
+                    ApprovedIcon()
+                        .stroke()
+                        .foregroundColor(.red)
+                        .opacity(0.5)
+                    Circle()
+                        .frame(width: geometry.size.width * 0.4)
+                        .foregroundColor(.red)
+                case .attention:
+                    ApprovedIcon()
+                        .stroke()
+                        .foregroundColor(.green)
+                        .opacity(0.5)
+                    Circle()
+                        .frame(width: geometry.size.width * 0.55)
+                        .foregroundColor(.green)
+                }
             }
         }
-        .frame(width: 50, height: 50)
     }
     
     @ViewBuilder func approvedIcon() -> some View {
@@ -66,19 +67,7 @@ struct ApprovedIcon : Shape {
         var path = Path()
         
         path.move(to: CGPoint(x: rect.midX, y: rect.minY))
-        path.addArc(center: CGPoint(x: rect.midX, y: rect.midY), radius: 15, startAngle: .degrees(-90), endAngle: .degrees(280), clockwise: false)
-        path.move(to: CGPoint(x: rect.midX, y: rect.maxY))
-        path.addLine(to: CGPoint(x: rect.midX, y: rect.maxY*0.8))
-        return path
-    }
-}
-
-struct ReviewIcon : Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        
-        path.move(to: CGPoint(x: rect.midX, y: rect.minY))
-        path.addArc(center: CGPoint(x: rect.midX, y: rect.midY), radius: 15, startAngle: .degrees(-90), endAngle: .degrees(280), clockwise: false)
+        path.addArc(center: CGPoint(x: rect.midX, y: rect.midY), radius: rect.maxY*0.3, startAngle: .degrees(-90), endAngle: .degrees(280), clockwise: false)
         path.move(to: CGPoint(x: rect.midX, y: rect.maxY))
         path.addLine(to: CGPoint(x: rect.midX, y: rect.maxY*0.8))
         return path
@@ -89,9 +78,13 @@ struct PRIcon_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             PRIcon(state: .draft)
+                .frame(width: 50, height: 50)
             PRIcon(state: .review)
+                .frame(width: 40, height: 40)
             PRIcon(state: .blocked)
+                .frame(width: 30, height: 30)
             PRIcon(state: .attention)
+                .frame(width: 20, height: 20)
         }
         .previewLayout(.fixed(width: 50, height: 300))
     }

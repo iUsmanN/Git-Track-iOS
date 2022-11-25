@@ -20,22 +20,14 @@ struct PullRequestsView: View {
                         ForEach(viewModel.model[0]) { pr in
                             PRCell(pullRequest: pr)
                                 .swipeActions {
-                                    Button("Track") {
-                                        print("Start live activity")
-                                    }
-                                    .tint(.blue)
-                                    
-                                    Button("Star") {
-                                        print("Star PR")
-                                    }
-                                    .tint(.yellow)
+                                    swipeActions(pr: pr)
                                 }
                         }
                     case viewModel.sections[1]:
                         ForEach(viewModel.model[1]) { pr in
                             PRCell(pullRequest: pr)
                                 .swipeActions {
-                                    swipeActions()
+                                    swipeActions(pr: pr)
                                 }
                         }
                     case viewModel.sections[2]:
@@ -54,16 +46,12 @@ struct PullRequestsView: View {
         }
     }
     
-    @ViewBuilder func swipeActions() -> some View {
+    @ViewBuilder func swipeActions(pr: PullRequest) -> some View {
         Button("Track") {
-            print("Start live activity")
+            stopLiveActivity()
+            startLiveActivity(pr: pr)
         }
         .tint(.blue)
-        
-        Button("Star") {
-            print("Star PR")
-        }
-        .tint(.yellow)
     }
 }
 
@@ -72,3 +60,5 @@ struct PullRequestsView_Previews: PreviewProvider {
         PullRequestsView(viewModel: PullRequestsViewModel())
     }
 }
+
+extension PullRequestsView: LiveActivityManager {}

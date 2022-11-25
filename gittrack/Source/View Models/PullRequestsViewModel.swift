@@ -40,3 +40,21 @@ import OctoKit
         }
     }
 }
+
+extension PullRequestsViewModel: PullRequestService {
+    
+    func fetchPRs() {
+        getPRs().sink { completion in
+            switch completion {
+            case .failure(let error):
+                print(error)
+            case .finished:
+                print("")
+            }
+        } receiveValue: { <#PRObject#> in
+            <#code#>
+        }
+
+
+    }
+}

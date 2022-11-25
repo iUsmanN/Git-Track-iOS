@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum PRStatus {
-    case draft
-    case review
-    case blocked
-    case attention
+enum PRStatus: String, Codable {
+    case draft = "DRAFT"
+    case review = "IN REVIEW"
+    case blocked = "BLOCKED"
+    case attention = "APPROVED"
 }
 
 struct PullRequest: Identifiable, Hashable {

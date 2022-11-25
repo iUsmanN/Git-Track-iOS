@@ -13,8 +13,19 @@
 		B6006E10292E330C00F8B21F /* PullRequestsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6006E0F292E330C00F8B21F /* PullRequestsViewModel.swift */; };
 		B6006E12292E36C200F8B21F /* PRCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6006E11292E36C200F8B21F /* PRCell.swift */; };
 		B61F30B6292E91B20068BAC7 /* PRIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61F30B5292E91B20068BAC7 /* PRIcon.swift */; };
+		B6460D4F2930218A00C427FE /* GlowingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6460D4E2930218A00C427FE /* GlowingCircle.swift */; };
+		B6460D502930218A00C427FE /* GlowingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6460D4E2930218A00C427FE /* GlowingCircle.swift */; };
+		B6DA1BF12930DD3B00C18947 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DA1BF02930DD3B00C18947 /* Constants.swift */; };
+		B6DA1BF22930DD3B00C18947 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DA1BF02930DD3B00C18947 /* Constants.swift */; };
 		B6DD7BC3292EF2E900ECEACE /* OctoKit in Frameworks */ = {isa = PBXBuildFile; productRef = B6DD7BC2292EF2E900ECEACE /* OctoKit */; };
 		B6DD7BC5292EFAB000ECEACE /* gittrack_assigned_widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DD7BC4292EFAB000ECEACE /* gittrack_assigned_widget.swift */; };
+		B6DD7BC8292F8EC400ECEACE /* PRTrackingAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DD7BC7292F8EC400ECEACE /* PRTrackingAttributes.swift */; };
+		B6DD7BCA292F900300ECEACE /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DD7BC9292F900300ECEACE /* LiveActivityManager.swift */; };
+		B6DD7BCB292F900800ECEACE /* PRTrackingAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DD7BC7292F8EC400ECEACE /* PRTrackingAttributes.swift */; };
+		B6DD7BCD292FA8A700ECEACE /* PRLiveActivityDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DD7BCC292FA8A700ECEACE /* PRLiveActivityDetailView.swift */; };
+		B6DD7BCE292FA8A700ECEACE /* PRLiveActivityDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DD7BCC292FA8A700ECEACE /* PRLiveActivityDetailView.swift */; };
+		B6DD7BD0292FAB8200ECEACE /* PRTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DD7BCF292FAB8200ECEACE /* PRTimeline.swift */; };
+		B6DD7BD1292FAB8200ECEACE /* PRTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DD7BCF292FAB8200ECEACE /* PRTimeline.swift */; };
 		B6E142AF292EE1A00054850C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6E142AE292EE1A00054850C /* WidgetKit.framework */; };
 		B6E142B1292EE1A00054850C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6E142B0292EE1A00054850C /* SwiftUI.framework */; };
 		B6E142B4292EE1A00054850C /* gittrack_widgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E142B3292EE1A00054850C /* gittrack_widgetBundle.swift */; };
@@ -69,7 +80,13 @@
 		B6006E0F292E330C00F8B21F /* PullRequestsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestsViewModel.swift; sourceTree = "<group>"; };
 		B6006E11292E36C200F8B21F /* PRCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRCell.swift; sourceTree = "<group>"; };
 		B61F30B5292E91B20068BAC7 /* PRIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRIcon.swift; sourceTree = "<group>"; };
+		B6460D4E2930218A00C427FE /* GlowingCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowingCircle.swift; sourceTree = "<group>"; };
+		B6DA1BF02930DD3B00C18947 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B6DD7BC4292EFAB000ECEACE /* gittrack_assigned_widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gittrack_assigned_widget.swift; sourceTree = "<group>"; };
+		B6DD7BC7292F8EC400ECEACE /* PRTrackingAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRTrackingAttributes.swift; sourceTree = "<group>"; };
+		B6DD7BC9292F900300ECEACE /* LiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityManager.swift; sourceTree = "<group>"; };
+		B6DD7BCC292FA8A700ECEACE /* PRLiveActivityDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRLiveActivityDetailView.swift; sourceTree = "<group>"; };
+		B6DD7BCF292FAB8200ECEACE /* PRTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRTimeline.swift; sourceTree = "<group>"; };
 		B6E142AC292EE1A00054850C /* gittrack-widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "gittrack-widgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E142AE292EE1A00054850C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		B6E142B0292EE1A00054850C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -152,6 +169,7 @@
 		B61F30B3292E5ECD0068BAC7 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				B6DD7BC9292F900300ECEACE /* LiveActivityManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -160,8 +178,18 @@
 			isa = PBXGroup;
 			children = (
 				B61F30B5292E91B20068BAC7 /* PRIcon.swift */,
+				B6DD7BCF292FAB8200ECEACE /* PRTimeline.swift */,
+				B6460D4E2930218A00C427FE /* GlowingCircle.swift */,
 			);
 			path = Visual;
+			sourceTree = "<group>";
+		};
+		B6DD7BC6292F8E4D00ECEACE /* Live Activities */ = {
+			isa = PBXGroup;
+			children = (
+				B6DD7BC7292F8EC400ECEACE /* PRTrackingAttributes.swift */,
+			);
+			path = "Live Activities";
 			sourceTree = "<group>";
 		};
 		B6E142AD292EE1A00054850C /* Frameworks */ = {
@@ -183,6 +211,7 @@
 				B6E142BA292EE1A20054850C /* Assets.xcassets */,
 				B6E142BC292EE1A20054850C /* Info.plist */,
 				B6DD7BC4292EFAB000ECEACE /* gittrack_assigned_widget.swift */,
+				B6DD7BCC292FA8A700ECEACE /* PRLiveActivityDetailView.swift */,
 			);
 			path = "gittrack-widget";
 			sourceTree = "<group>";
@@ -229,6 +258,7 @@
 		B6FD6F32292848510073A4BF /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				B6DD7BC6292F8E4D00ECEACE /* Live Activities */,
 				B61F30B3292E5ECD0068BAC7 /* Managers */,
 				B6006E0E292E32F800F8B21F /* View Models */,
 				B6006E02292E2E4D00F8B21F /* Views */,
@@ -236,6 +266,7 @@
 				B6FD6F3D292849280073A4BF /* Services */,
 				B6FD6F3A292848CB0073A4BF /* Enums */,
 				B6FD6F332928485A0073A4BF /* Networking */,
+				B6DA1BF02930DD3B00C18947 /* Constants.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -390,8 +421,13 @@
 				B6E142B4292EE1A00054850C /* gittrack_widgetBundle.swift in Sources */,
 				B6E142BD292EE1A20054850C /* gittrack_widget.intentdefinition in Sources */,
 				B6E142C6292EE1EA0054850C /* PullRequest.swift in Sources */,
+				B6DD7BCE292FA8A700ECEACE /* PRLiveActivityDetailView.swift in Sources */,
+				B6DA1BF22930DD3B00C18947 /* Constants.swift in Sources */,
+				B6460D502930218A00C427FE /* GlowingCircle.swift in Sources */,
 				B6E142B6292EE1A00054850C /* gittrack_widgetLiveActivity.swift in Sources */,
+				B6DD7BD1292FAB8200ECEACE /* PRTimeline.swift in Sources */,
 				B6E142C7292EE35E0054850C /* PRCell.swift in Sources */,
+				B6DD7BCB292F900800ECEACE /* PRTrackingAttributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,18 +435,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6DD7BD0292FAB8200ECEACE /* PRTimeline.swift in Sources */,
 				B6E142BE292EE1A20054850C /* gittrack_widget.intentdefinition in Sources */,
 				B6FD6F27292844030073A4BF /* ContentView.swift in Sources */,
 				B6FD6F3F292849430073A4BF /* PullRequestService.swift in Sources */,
 				B6006E09292E2EFF00F8B21F /* PullRequestsView.swift in Sources */,
+				B6460D4F2930218A00C427FE /* GlowingCircle.swift in Sources */,
 				B6FD6F42292849660073A4BF /* PullRequest.swift in Sources */,
+				B6DD7BCA292F900300ECEACE /* LiveActivityManager.swift in Sources */,
+				B6DD7BC8292F8EC400ECEACE /* PRTrackingAttributes.swift in Sources */,
 				B6FD6F39292848B00073A4BF /* Networking.swift in Sources */,
 				B6006E12292E36C200F8B21F /* PRCell.swift in Sources */,
 				B61F30B6292E91B20068BAC7 /* PRIcon.swift in Sources */,
 				B6FD6F3C292848EA0073A4BF /* AppError.swift in Sources */,
 				B6FD6F25292844030073A4BF /* gittrackApp.swift in Sources */,
 				B6FD6F37292848850073A4BF /* Endpoint.swift in Sources */,
+				B6DA1BF12930DD3B00C18947 /* Constants.swift in Sources */,
 				B6006E10292E330C00F8B21F /* PullRequestsViewModel.swift in Sources */,
+				B6DD7BCD292FA8A700ECEACE /* PRLiveActivityDetailView.swift in Sources */,
 				B6006E0B292E2F1500F8B21F /* LoginView.swift in Sources */,
 				B6FD6F35292848710073A4BF /* NetworkEngine.swift in Sources */,
 			);
@@ -439,6 +481,7 @@
 				INFOPLIST_FILE = "gittrack-widget/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "gittrack-widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,6 +509,7 @@
 				INFOPLIST_FILE = "gittrack-widget/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "gittrack-widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -607,6 +651,9 @@
 				DEVELOPMENT_TEAM = 2TXYU6AZ6K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Git Track";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -637,6 +684,9 @@
 				DEVELOPMENT_TEAM = 2TXYU6AZ6K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Git Track";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

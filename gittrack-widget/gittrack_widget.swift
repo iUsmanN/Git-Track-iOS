@@ -27,7 +27,8 @@ struct Provider: IntentTimelineProvider {
                 let prs = t.filter({$0.user?.login ?? "" == "iUsmanN"}).map { inputPR in
                     return PullRequest(name: inputPR.title ?? "XX", creator: inputPR.user?.login ?? "XX", status: .review)
                 }
-                let timeline = Timeline(entries: [PREntry(date: Date(), prObject: prs, configuration: ConfigurationIntent())], policy: .atEnd)
+                guard let nextUpdate = Calendar.current.date(byAdding: .minute, value: 2, to: Date()) else { return }
+                let timeline = Timeline(entries: [PREntry(date: Date(), prObject: prs, configuration: ConfigurationIntent())], policy: .after(nextUpdate))
                 completion(timeline)
             case .failure(let error):
                 print(error)
