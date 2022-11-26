@@ -38,6 +38,18 @@
 		B6E142C6292EE1EA0054850C /* PullRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD6F41292849660073A4BF /* PullRequest.swift */; };
 		B6E142C7292EE35E0054850C /* PRCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6006E11292E36C200F8B21F /* PRCell.swift */; };
 		B6E142C8292EE3690054850C /* PRIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61F30B5292E91B20068BAC7 /* PRIcon.swift */; };
+		B6EE48662931911D008982DB /* GithubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE48652931911D008982DB /* GithubRepo.swift */; };
+		B6EE48672931911D008982DB /* GithubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE48652931911D008982DB /* GithubRepo.swift */; };
+		B6EE48692931915C008982DB /* GithubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE48682931915C008982DB /* GithubUser.swift */; };
+		B6EE486A2931915C008982DB /* GithubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE48682931915C008982DB /* GithubUser.swift */; };
+		B6EE486C29319183008982DB /* PRStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE486B29319183008982DB /* PRStatus.swift */; };
+		B6EE486D29319183008982DB /* PRStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE486B29319183008982DB /* PRStatus.swift */; };
+		B6EE486F293191E5008982DB /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE486E293191E5008982DB /* UserService.swift */; };
+		B6EE4870293191E5008982DB /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EE486E293191E5008982DB /* UserService.swift */; };
+		B6EE487129319238008982DB /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD6F34292848710073A4BF /* NetworkEngine.swift */; };
+		B6EE487229319242008982DB /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD6F36292848850073A4BF /* Path.swift */; };
+		B6EE487329319245008982DB /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD6F38292848B00073A4BF /* Networking.swift */; };
+		B6EE487429319257008982DB /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD6F3B292848EA0073A4BF /* AppError.swift */; };
 		B6FD6F25292844030073A4BF /* gittrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD6F24292844030073A4BF /* gittrackApp.swift */; };
 		B6FD6F27292844030073A4BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FD6F26292844030073A4BF /* ContentView.swift */; };
 		B6FD6F29292844040073A4BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6FD6F28292844040073A4BF /* Assets.xcassets */; };
@@ -96,6 +108,10 @@
 		B6E142B9292EE1A00054850C /* gittrack_widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = gittrack_widget.intentdefinition; sourceTree = "<group>"; };
 		B6E142BA292EE1A20054850C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6E142BC292EE1A20054850C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6EE48652931911D008982DB /* GithubRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepo.swift; sourceTree = "<group>"; };
+		B6EE48682931915C008982DB /* GithubUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUser.swift; sourceTree = "<group>"; };
+		B6EE486B29319183008982DB /* PRStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRStatus.swift; sourceTree = "<group>"; };
+		B6EE486E293191E5008982DB /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		B6FD6F21292844030073A4BF /* gittrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gittrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6FD6F24292844030073A4BF /* gittrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gittrackApp.swift; sourceTree = "<group>"; };
 		B6FD6F26292844030073A4BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -293,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				B6FD6F3E292849430073A4BF /* PullRequestService.swift */,
+				B6EE486E293191E5008982DB /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -301,6 +318,9 @@
 			isa = PBXGroup;
 			children = (
 				B6FD6F41292849660073A4BF /* PullRequest.swift */,
+				B6EE48652931911D008982DB /* GithubRepo.swift */,
+				B6EE48682931915C008982DB /* GithubUser.swift */,
+				B6EE486B29319183008982DB /* PRStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -421,13 +441,21 @@
 				B6E142B4292EE1A00054850C /* gittrack_widgetBundle.swift in Sources */,
 				B6E142BD292EE1A20054850C /* gittrack_widget.intentdefinition in Sources */,
 				B6E142C6292EE1EA0054850C /* PullRequest.swift in Sources */,
+				B6EE4870293191E5008982DB /* UserService.swift in Sources */,
+				B6EE48672931911D008982DB /* GithubRepo.swift in Sources */,
 				B6DD7BCE292FA8A700ECEACE /* PRLiveActivityDetailView.swift in Sources */,
 				B6DA1BF22930DD3B00C18947 /* Constants.swift in Sources */,
 				B6460D502930218A00C427FE /* GlowingCircle.swift in Sources */,
+				B6EE487329319245008982DB /* Networking.swift in Sources */,
 				B6E142B6292EE1A00054850C /* gittrack_widgetLiveActivity.swift in Sources */,
 				B6DD7BD1292FAB8200ECEACE /* PRTimeline.swift in Sources */,
 				B6E142C7292EE35E0054850C /* PRCell.swift in Sources */,
+				B6EE487229319242008982DB /* Path.swift in Sources */,
+				B6EE487129319238008982DB /* NetworkEngine.swift in Sources */,
+				B6EE486A2931915C008982DB /* GithubUser.swift in Sources */,
 				B6DD7BCB292F900800ECEACE /* PRTrackingAttributes.swift in Sources */,
+				B6EE486D29319183008982DB /* PRStatus.swift in Sources */,
+				B6EE487429319257008982DB /* AppError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,17 +472,21 @@
 				B6FD6F42292849660073A4BF /* PullRequest.swift in Sources */,
 				B6DD7BCA292F900300ECEACE /* LiveActivityManager.swift in Sources */,
 				B6DD7BC8292F8EC400ECEACE /* PRTrackingAttributes.swift in Sources */,
+				B6EE48692931915C008982DB /* GithubUser.swift in Sources */,
 				B6FD6F39292848B00073A4BF /* Networking.swift in Sources */,
 				B6006E12292E36C200F8B21F /* PRCell.swift in Sources */,
 				B61F30B6292E91B20068BAC7 /* PRIcon.swift in Sources */,
+				B6EE486C29319183008982DB /* PRStatus.swift in Sources */,
 				B6FD6F3C292848EA0073A4BF /* AppError.swift in Sources */,
 				B6FD6F25292844030073A4BF /* gittrackApp.swift in Sources */,
 				B6FD6F37292848850073A4BF /* Path.swift in Sources */,
 				B6DA1BF12930DD3B00C18947 /* Constants.swift in Sources */,
 				B6006E10292E330C00F8B21F /* PullRequestsViewModel.swift in Sources */,
 				B6DD7BCD292FA8A700ECEACE /* PRLiveActivityDetailView.swift in Sources */,
+				B6EE486F293191E5008982DB /* UserService.swift in Sources */,
 				B6006E0B292E2F1500F8B21F /* LoginView.swift in Sources */,
 				B6FD6F35292848710073A4BF /* NetworkEngine.swift in Sources */,
+				B6EE48662931911D008982DB /* GithubRepo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

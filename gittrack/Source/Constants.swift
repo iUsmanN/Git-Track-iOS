@@ -9,8 +9,9 @@ import Foundation
 
 struct Constants {
     enum Github {
-        static let token = "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"
+        static let token = "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"
         static let owner = "iUsmanN"
         static let repo = "CrowdCast_iOS"
+        static let login = "iUsmanN-Guardian"
     }
 }

@@ -26,8 +26,8 @@ struct LoginView: View {
         
         //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
 //        getPRs(repo: GithubRepo(owner: "guardian", name: "ios-live"))
-//        getUser()
-        getReview(repo: GithubRepo(owner: "guardian", name: "ios-live"), id: 6652)
+        getUser()
+//        getReview(repo: GithubRepo(owner: "guardian", name: "ios-live"), id: 6652)
         
     }
     
@@ -60,6 +60,6 @@ struct LoginView_Previews: PreviewProvider {
     }
 }
 
-extension LoginView: PullRequestService {
+extension LoginView: PullRequestService, UserService {
     
 }

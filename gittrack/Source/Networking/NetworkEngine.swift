@@ -26,7 +26,7 @@ extension NetworkEngine {
         urlRequest.httpMethod = endpoint.method.rawValue
         urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
-        urlRequest.setValue("Bearer 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", forHTTPHeaderField: "Authorization")
+        urlRequest.setValue("Bearer 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", forHTTPHeaderField: "Authorization")
         
         return Future() { promise in
             let session = URLSession(configuration: .default)
