@@ -26,6 +26,7 @@ extension NetworkEngine {
         urlRequest.httpMethod = endpoint.method.rawValue
         urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+        urlRequest.setValue("Bearer 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", forHTTPHeaderField: "Authorization")
         
         return Future() { promise in
             let session = URLSession(configuration: .default)
@@ -33,6 +34,7 @@ extension NetworkEngine {
                 guard error == nil else { return }
                 guard response != nil else { return }
                 guard let data = data else { return }
+                let str = String(decoding: data, as: UTF8.self) //For Debug
                 guard let responseObject = try? JSONDecoder().decode(T.self, from: data) else { return }
                 promise(.success(responseObject))
             }

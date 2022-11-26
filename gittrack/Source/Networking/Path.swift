@@ -10,7 +10,7 @@ import Foundation
 struct Endpoint {
     var scheme  : Networking.Scheme
     var host    : Networking.Host
-    var path    : Networking.Endpoint
+    var path    : Networking.Path
     var method  : Networking.HTTPMethod
     var parameters  : [String:String]?
 }

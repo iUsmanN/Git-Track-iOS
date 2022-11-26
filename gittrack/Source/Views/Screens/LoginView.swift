@@ -21,10 +21,14 @@ struct LoginView: View {
     }
     
     private func Login() {
-        let config = TokenConfiguration("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")
-        loadCurrentUser(config: config)
+//        let config = TokenConfiguration("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")
+//        loadCurrentUser(config: config)
         
         //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
+//        getPRs(repo: GithubRepo(owner: "guardian", name: "ios-live"))
+//        getUser()
+        getReview(repo: GithubRepo(owner: "guardian", name: "ios-live"), id: 6652)
+        
     }
     
     func loadCurrentUser(config: TokenConfiguration) {
@@ -54,4 +58,8 @@ struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
     }
+}
+
+extension LoginView: PullRequestService {
+    
 }

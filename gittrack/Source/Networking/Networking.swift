@@ -17,11 +17,21 @@ enum Networking {
         case https = "https"
     }
     
-    enum Endpoint: String {
-        case companyInfo = "/v4/company"
-        case launches = "/v4/launches"
+    enum Path {
+        case PRs((String, String))
+        case User
+        case PRReview((String, String, Int))
         
-        case PRs = "/repos/iUsmanN/cyty_ios/pulls"
+        var rawValue: String {
+            switch self {
+            case .PRs(let (owner, repo)):
+                return "/repos/\(owner)/\(repo)/pulls"
+            case .User:
+                return "/user"
+            case .PRReview(let (owner, repo, id)):
+                return "/repos/\(owner)/\(repo)/pulls/\(id)/reviews"
+            }
+        }
     }
     
     enum HTTPMethod : String {
