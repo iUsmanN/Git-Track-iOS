@@ -12,14 +12,14 @@ protocol PullRequestService: NetworkEngine {}
 
 extension PullRequestService {
     
-    func getPRs(repo: GithubRepo) -> Future<[PRObject], AppError> {
+    func getPRs(repo: GithubRepo) async -> Result<[PRObject], AppError> {
         let endpoint = Endpoint(scheme: .https, host: .baseUrl, path: .PRs((repo.owner, repo.name)), method: .get)
-        return networkRequest(endpoint: endpoint)
+        return await networkRequest(endpoint: endpoint)
     }
     
-    func getReview(repo: GithubRepo, id: PullRequestID) -> Future<[PRReviewStatus], AppError> {
+    func getReview(repo: GithubRepo, id: PullRequestID) async -> Result<[PRReviewStatus], AppError> {
         let endpoint = Endpoint(scheme: .https, host: .baseUrl, path: .PRReview((repo.owner, repo.name, id)), method: .get)
-        return networkRequest(endpoint: endpoint)
+        return await networkRequest(endpoint: endpoint)
     }
 }
 

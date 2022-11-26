@@ -12,8 +12,8 @@ protocol UserService: NetworkEngine {}
 
 extension UserService {
     
-    func getUser() -> Future<GithubUser, AppError> {
+    func getUser() async -> Result<GithubUser, AppError> {
         let endpoint = Endpoint(scheme: .https, host: .baseUrl, path: .User, method: .get)
-        return networkRequest(endpoint: endpoint)
+        return await networkRequest(endpoint: endpoint)
     }
 }

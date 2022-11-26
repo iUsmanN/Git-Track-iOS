@@ -12,7 +12,7 @@ protocol NetworkEngine {}
 
 extension NetworkEngine {
     
-    func networkRequest<T: Codable>(endpoint: Endpoint) -> Future<T, AppError> {
+    func networkRequest<T: Codable>(endpoint: Endpoint) async -> Result<T, AppError> {
         
         var components = URLComponents()
         components.scheme = endpoint.scheme.rawValue
@@ -20,7 +20,7 @@ extension NetworkEngine {
         components.path = endpoint.path.rawValue
         components.queryItems = endpoint.parameters?.map({ row in return URLQueryItem(name: row.key, value: row.value) })
         
-        guard let url = components.url else { return Future { promise in promise(.failure(.networkEngineFailure)) }}
+        guard let url = components.url else { return .failure(.networkEngineFailure)}
         var urlRequest = URLRequest(url: url)
         
         urlRequest.httpMethod = endpoint.method.rawValue
@@ -28,17 +28,15 @@ extension NetworkEngine {
         urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
         urlRequest.setValue("Bearer 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", forHTTPHeaderField: "Authorization")
         
-        return Future() { promise in
-            let session = URLSession(configuration: .default)
-            let dataTask = session.dataTask(with: urlRequest) { data, response, error in
-                guard error == nil else { return }
-                guard response != nil else { return }
-                guard let data = data else { return }
-                let str = String(decoding: data, as: UTF8.self) //For Debug
-                guard let responseObject = try? JSONDecoder().decode(T.self, from: data) else { return }
-                promise(.success(responseObject))
-            }
-            dataTask.resume()
+        do {
+            let (data, response) = try await URLSession.shared.data(for: urlRequest)
+            guard let response = response as? HTTPURLResponse else { return .failure(.networkEngineFailure)}
+            guard response.statusCode == 200 else { return .failure(.networkEngineFailure)}
+            let str = String(decoding: data, as: UTF8.self)
+            guard let responseObject = try? JSONDecoder().decode(T.self, from: data) else { return .failure(.networkEngineFailure)}
+            return.success(responseObject)
+        } catch {
+            return .failure(.networkEngineFailure)
         }
     }
 }
